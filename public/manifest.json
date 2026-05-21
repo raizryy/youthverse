@@ -1,0 +1,16 @@
+{
+  "name": "YouthVerse",
+  "short_name": "YouthVerse",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#7c3aed",
+  "description": "Digital literature platform",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
