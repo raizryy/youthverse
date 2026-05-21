@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the YouthVerse platform.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string", "format": "uri" },
+        "role": { "type": "string", "enum": ["admin", "user"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role", "createdAt"]
+    },
+    "Content": {
+      "title": "Content",
+      "description": "A novel, manga, manhua, or manhwa.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "coverImage": { "type": "string", "format": "uri" },
+        "type": { "type": "string", "enum": ["novel", "manga", "manhua", "manhwa"] },
+        "author": { "type": "string" },
+        "status": { "type": "string", "enum": ["ongoing", "completed", "hiatus"] },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "views": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "coverImage", "type", "author", "status", "createdAt", "updatedAt"]
+    },
+    "Chapter": {
+      "title": "Chapter",
+      "description": "A chapter belonging to a specific content.",
+      "type": "object",
+      "properties": {
+        "contentId": { "type": "string" },
+        "chapterNumber": { "type": "number" },
+        "title": { "type": "string" },
+        "pages": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "For manga/manhua/manhwa" },
+        "textContent": { "type": "string", "description": "For novels" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["contentId", "chapterNumber", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Stores user profiles."
+    },
+    "/contents/{contentId}": {
+      "schema": { "$ref": "#/entities/Content" },
+      "description": "Stores all reading materials."
+    },
+    "/contents/{contentId}/chapters/{chapterId}": {
+      "schema": { "$ref": "#/entities/Chapter" },
+      "description": "Stores chapters for a specific content."
+    }
+  }
+}

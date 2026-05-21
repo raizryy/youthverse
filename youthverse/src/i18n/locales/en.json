@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "library": "Library",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "home": {
+    "welcome": "Welcome to YouthVerse",
+    "subtitle": "Your professional reading platform for novels, manga, and more.",
+    "searchPlaceholder": "Search by title, author, artist...",
+    "trending": "Trending Now",
+    "allTypes": "All Types",
+    "novels": "Novels",
+    "mangas": "Manga",
+    "manhuas": "Manhua",
+    "manhwas": "Manhwars",
+    "noItems": "No projects under this category yet."
+  },
+  "detail": {
+    "by": "Author:",
+    "type": "Format:",
+    "status": "State:",
+    "chapters": "Chapters",
+    "synopsis": "Synopsis",
+    "readNow": "Read Now",
+    "emptyChapters": "This reading block has no available chapters published yet.",
+    "back": "Back"
+  },
+  "reader": {
+    "prev": "Prev Chapter",
+    "next": "Next Chapter",
+    "settings": "Reading Settings",
+    "fontSize": "Font Size",
+    "theme": "Background Theme",
+    "themeLight": "Paper White",
+    "themeWarm": "Warm Sepia",
+    "themeDark": "Midnight Black",
+    "backToDetail": "Back to Info"
+  },
+  "auth": {
+    "signInWithGoogle": "Sign in with Google",
+    "signInError": "Failed to sign in. Please try again."
+  }
+}
